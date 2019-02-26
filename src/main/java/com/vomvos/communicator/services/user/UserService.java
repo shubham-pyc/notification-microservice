@@ -73,4 +73,28 @@ public class UserService {
 	public static List<User> getUserList(){
 		return userList;
 	}
+	public User getUser(UUID id) {
+		
+		try {
+			User user = userRepository.findById(id);
+			return user;
+		} catch (Exception e) {
+			// TODO: handle exception
+			logger.info("Exception inside getUser of UserUservice",e);
+			e.printStackTrace();
+		}
+		return null;
+	}
+	public User getUserByEmail(String email) {
+		
+		try {
+			User user = userRepository.getUserByEmail(email);
+			return user;
+		} catch (Exception e) {
+			// TODO: handle exception
+			logger.info("Exception inside getUser of UserUservice",e);
+			e.printStackTrace();
+		}
+		return null;
+	}
 }

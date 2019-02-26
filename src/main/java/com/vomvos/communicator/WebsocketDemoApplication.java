@@ -16,7 +16,6 @@ import com.vomvos.communicator.services.user.UserService;
 
 
 @CrossOrigin(origins = "*")
-@RestController
 @EnableAutoConfiguration
 @SpringBootApplication
 public class WebsocketDemoApplication {

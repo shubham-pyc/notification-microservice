@@ -89,6 +89,21 @@ public class User extends IdBoSupport {
 		this.createdAt = createdAt;
 		this.role = role;
 	}
+	public User(UserByEmail user) {
+		super();
+		this.id = user.getId();
+		this.email = user.getEmail();
+		this.fullname = user.getFullname();
+		this.password = user.getPassword();
+		this.profilePic = user.getProfilePic();
+		this.isCreator = user.getIsCreator();
+		this.isProfileCompleted = user.getIsProfileCompleted();
+		this.updatedAt = user.getUpdatedAt();
+		this.createdAt = user.getCreatedAt();
+		this.role = user.getRole();
+		this.isPresent = user.getIsPresent();
+		this.badgeCount = user.getBadgeCount();
+	}
 
 
 	public long getUpdatedAt() {

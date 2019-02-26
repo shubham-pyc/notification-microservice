@@ -56,7 +56,8 @@ public class UserRepositoryImpl extends CrudRepositoryImpl<User> implements IUse
 		try {
 			Select select = QueryBuilder.select().from(TableNames.USERS_BY_EMAIL);
 			select.where(QueryBuilder.eq("email", email));//..			
-			return  cassandraTemplate.selectOne(select, User.class);
+			UserByEmail newUser =   cassandraTemplate.selectOne(select, UserByEmail.class);
+			return new User(newUser);
 		} catch (Exception e) {
 			e.printStackTrace();
 			return null;
