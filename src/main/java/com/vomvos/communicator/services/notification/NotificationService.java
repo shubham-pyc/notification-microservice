@@ -38,7 +38,7 @@ public class NotificationService implements INotificationService{
 			for(UUID toUserId:recievers) {
 				userNotification.setToUserId(toUserId);
 				notificationRepository.save(userNotification);
-				messageTemplate.convertAndSendToUser(toUserId.toString(),"/notifications",userNotification);
+				messageTemplate.convertAndSendToUser("notifications/",toUserId.toString(),userNotification);
 			}
 			return true;
 		} catch (Exception e) {
